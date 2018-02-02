@@ -14,7 +14,7 @@ class ListViewController: UIViewController {
     var listModel: ListModel!
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.register(ListTableViewCell.self)
+        tableView.registerCell(ListTableViewCell.self)
         tableView.dataSource = self
         tableView.estimatedRowHeight = 200
         tableView.rowHeight = UITableViewAutomaticDimension

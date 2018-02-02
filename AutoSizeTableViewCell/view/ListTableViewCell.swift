@@ -7,14 +7,49 @@
 //
 
 import UIKit
+import SnapKit
 
 class ListTableViewCell: UITableViewCell {
-    @IBOutlet weak var categoryLabel: UILabel!
-    @IBOutlet weak var titleLabel: UILabel!
-    @IBOutlet weak var timeLabel: UILabel!
-    @IBOutlet weak var authorLabel: UILabel!
-    @IBOutlet weak var coverImage: UIImageView!
-    @IBOutlet weak var bookmarkButton: UIButton!
+    lazy private var categoryLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14, weight: .bold)
+        label.textColor = UIColor.green
+        return label
+    }()
+    
+    lazy private var titleLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 17, weight: .bold)
+        label.textColor = UIColor.black
+        label.numberOfLines = 0
+        return label
+    }()
+    
+    lazy private var timeLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.textColor = UIColor.lightGray
+        return label
+    }()
+    
+    lazy private var authorLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 11)
+        label.textColor = UIColor.lightGray
+        return label
+    }()
+    
+    lazy private var coverImage: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFit
+        return imageView
+    }()
+    
+    lazy private var dotView: UIView = {
+        let view = UIView()
+        view.backgroundColor = UIColor.darkGray
+        return view
+    }()
     
     func configure(with model:ListTableViewCellModel) {
         categoryLabel.text = model.category.uppercased()
@@ -28,7 +63,23 @@ class ListTableViewCell: UITableViewCell {
             coverImage.isHidden = true
         }
     }
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
+    override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
+        super.init(style: .default, reuseIdentifier: String(describing: ListTableViewCell.self))
+        buildView()
+    }
+    
+    func buildView() {
+        separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+        
+        contentView.addSubview(categoryLabel)
+        categoryLabel.snp.makeConstraints { (make) in
+            make.edges.equalToSuperview()
+        }
+    }
 }
 
 struct ListTableViewCellModel {

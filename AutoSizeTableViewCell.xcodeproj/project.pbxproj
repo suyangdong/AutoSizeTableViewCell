@@ -23,9 +23,12 @@
 		995585CE1FD1970C00E3D50B /* NIO.png in Resources */ = {isa = PBXBuildFile; fileRef = 995585C51FD196FC00E3D50B /* NIO.png */; };
 		995585CF1FD1970C00E3D50B /* Uber.png in Resources */ = {isa = PBXBuildFile; fileRef = 995585C91FD196FD00E3D50B /* Uber.png */; };
 		995585D21FD1978B00E3D50B /* ListTableViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 995585D11FD1978B00E3D50B /* ListTableViewModel.swift */; };
+		B635AF05A6C85AE4E2779B22 /* Pods_AutoSizeTableViewCell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AF8B2CE6F718D4B881911252 /* Pods_AutoSizeTableViewCell.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1B290BD580124149E690849A /* Pods-AutoSizeTableViewCell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoSizeTableViewCell.release.xcconfig"; path = "Pods/Target Support Files/Pods-AutoSizeTableViewCell/Pods-AutoSizeTableViewCell.release.xcconfig"; sourceTree = "<group>"; };
+		3E5264977D7AF8802C783E92 /* Pods-AutoSizeTableViewCell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-AutoSizeTableViewCell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-AutoSizeTableViewCell/Pods-AutoSizeTableViewCell.debug.xcconfig"; sourceTree = "<group>"; };
 		995585A01FD0E34900E3D50B /* AutoSizeTableViewCell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AutoSizeTableViewCell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		995585A31FD0E34900E3D50B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		995585A51FD0E34900E3D50B /* ListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewController.swift; sourceTree = "<group>"; };
@@ -44,6 +47,7 @@
 		995585C81FD196FD00E3D50B /* Microsoft.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Microsoft.png; sourceTree = "<group>"; };
 		995585C91FD196FD00E3D50B /* Uber.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Uber.png; sourceTree = "<group>"; };
 		995585D11FD1978B00E3D50B /* ListTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListTableViewModel.swift; sourceTree = "<group>"; };
+		AF8B2CE6F718D4B881911252 /* Pods_AutoSizeTableViewCell.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_AutoSizeTableViewCell.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,17 +55,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B635AF05A6C85AE4E2779B22 /* Pods_AutoSizeTableViewCell.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7BE87114C8146B74E38D7DD1 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3E5264977D7AF8802C783E92 /* Pods-AutoSizeTableViewCell.debug.xcconfig */,
+				1B290BD580124149E690849A /* Pods-AutoSizeTableViewCell.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		995585971FD0E34800E3D50B = {
 			isa = PBXGroup;
 			children = (
 				995585A21FD0E34900E3D50B /* AutoSizeTableViewCell */,
 				995585A11FD0E34900E3D50B /* Products */,
+				7BE87114C8146B74E38D7DD1 /* Pods */,
+				D751543F712B56BA3A1CB150 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -137,6 +153,14 @@
 			path = images;
 			sourceTree = "<group>";
 		};
+		D751543F712B56BA3A1CB150 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AF8B2CE6F718D4B881911252 /* Pods_AutoSizeTableViewCell.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -144,9 +168,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 995585B21FD0E34900E3D50B /* Build configuration list for PBXNativeTarget "AutoSizeTableViewCell" */;
 			buildPhases = (
+				6415F1C9A3752DD62F68EB5E /* [CP] Check Pods Manifest.lock */,
 				9955859C1FD0E34800E3D50B /* Sources */,
 				9955859D1FD0E34800E3D50B /* Frameworks */,
 				9955859E1FD0E34800E3D50B /* Resources */,
+				4ABC65CD745BC71BDEA52CEA /* [CP] Embed Pods Frameworks */,
+				7A86AF4AEDD68423868704D8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -209,6 +236,60 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4ABC65CD745BC71BDEA52CEA /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-AutoSizeTableViewCell/Pods-AutoSizeTableViewCell-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoSizeTableViewCell/Pods-AutoSizeTableViewCell-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6415F1C9A3752DD62F68EB5E /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-AutoSizeTableViewCell-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7A86AF4AEDD68423868704D8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-AutoSizeTableViewCell/Pods-AutoSizeTableViewCell-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		9955859C1FD0E34800E3D50B /* Sources */ = {
@@ -348,6 +429,7 @@
 		};
 		995585B31FD0E34900E3D50B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3E5264977D7AF8802C783E92 /* Pods-AutoSizeTableViewCell.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -363,6 +445,7 @@
 		};
 		995585B41FD0E34900E3D50B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B290BD580124149E690849A /* Pods-AutoSizeTableViewCell.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
