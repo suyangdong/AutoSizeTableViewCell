@@ -53,6 +53,19 @@ class ListTableViewCell: UITableViewCell {
     
     lazy private var mainContainer: UIStackView = {
         let stackView = UIStackView()
+        stackView.axis = .vertical
+        stackView.spacing = 20
+        stackView.distribution = .fill
+        stackView.alignment = .fill
+        return stackView
+    }()
+    
+    lazy private var bodyContainer: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 20
+        stackView.distribution = .fill
+        stackView.alignment = .center
         return stackView
     }()
     
@@ -88,6 +101,17 @@ class ListTableViewCell: UITableViewCell {
         }
         
         mainContainer.addArrangedSubview(categoryLabel)
+        mainContainer.addArrangedSubview(bodyContainer)
+        
+        bodyContainer.addArrangedSubview(titleLabel)
+        bodyContainer.addArrangedSubview(coverImage)
+        
+        coverImage.snp.makeConstraints { (make) in
+            make.width.equalToSuperview().multipliedBy(0.333)
+            make.height.equalTo(bodyContainer.snp.width).multipliedBy(0.222)
+        }
+        
+        
     }
 }
 
