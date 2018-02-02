@@ -29,6 +29,7 @@ class ListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = UIColor.lightGray
+        label.setContentHuggingPriority(.defaultLow, for: .horizontal)
         return label
     }()
     
@@ -36,6 +37,7 @@ class ListTableViewCell: UITableViewCell {
         let label = UILabel()
         label.font = UIFont.systemFont(ofSize: 11)
         label.textColor = UIColor.lightGray
+        label.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return label
     }()
     
@@ -48,6 +50,7 @@ class ListTableViewCell: UITableViewCell {
     lazy private var dotView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.darkGray
+        view.setContentHuggingPriority(.defaultHigh, for: .horizontal)
         return view
     }()
     
@@ -64,6 +67,15 @@ class ListTableViewCell: UITableViewCell {
         let stackView = UIStackView()
         stackView.axis = .horizontal
         stackView.spacing = 20
+        stackView.distribution = .fill
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    lazy private var footContainer: UIStackView = {
+        let stackView = UIStackView()
+        stackView.axis = .horizontal
+        stackView.spacing = 10
         stackView.distribution = .fill
         stackView.alignment = .center
         return stackView
@@ -102,6 +114,7 @@ class ListTableViewCell: UITableViewCell {
         
         mainContainer.addArrangedSubview(categoryLabel)
         mainContainer.addArrangedSubview(bodyContainer)
+        mainContainer.addArrangedSubview(footContainer)
         
         bodyContainer.addArrangedSubview(titleLabel)
         bodyContainer.addArrangedSubview(coverImage)
@@ -111,7 +124,13 @@ class ListTableViewCell: UITableViewCell {
             make.height.equalTo(bodyContainer.snp.width).multipliedBy(0.222)
         }
         
+        footContainer.addArrangedSubview(authorLabel)
+        footContainer.addArrangedSubview(dotView)
+        footContainer.addArrangedSubview(timeLabel)
         
+        dotView.snp.makeConstraints { (make) in
+            make.size.equalTo(CGSize(width: 3.0, height: 3.0))
+        }
     }
 }
 
